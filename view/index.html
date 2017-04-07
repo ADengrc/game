@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>财神到接财神之新春红包大战</title>
+    <meta name="Description" content="我正在参与新春红包大战的游戏，金山银山，一起挑战，一起分享吧。"/>
+    <meta name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript">
+        var dpr, rem, scale;
+        var docEl = document.documentElement;
+        var fontEl = document.createElement('style');
+        var metaEl = document.querySelector('meta[name="viewport"]');
+        dpr = +window.devicePixelRatio.toFixed(2) || 1;
+        rem = window.screen.width * dpr / 10;
+        scale = 1 / dpr;
+        // 设置viewport，进行缩放，达到高清效果
+        metaEl.setAttribute('content', 'width=' + (dpr * window.screen.width) + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+        // 设置data-dpr属性，留作的css hack之用
+        docEl.setAttribute('data-dpr', dpr);
+        // 动态写入样式
+        docEl.firstElementChild.appendChild(fontEl);
+        fontEl.innerHTML = 'html{font-size:' + rem + 'px!important;}';
+        window.px = function(v) {
+            return v / 750 * document.body.clientWidth;
+        }
+        window.rem2px = function(v) {
+            v = parseFloat(v);
+            return v * rem;
+        };
+        window.px2rem = function(v) {
+            v = parseFloat(v);
+            return v / rem;
+        };
+        window.dpr = dpr;
+        window.rem = rem;
+    </script>
+</head>
+
+<body>
+    <div class="page page1">
+        <div class="bg">
+            <div class="logo"></div>
+            <div class="kid"></div>
+            <div class="csdjcs"></div>
+            <div class="gameName"></div>
+            <div class="btns">
+                <div class="ruleBtn"></div>
+                <div class="start"></div>
+            </div>
+        </div>
+    </div>
+    <div class="page page2">
+        <div class="bg">
+            <div class="logo"></div>
+            <div class="ruleTitle"></div>
+            <div class="ruleDes"></div>
+            <div class="btns">
+                <div class="start"></div>
+            </div>
+        </div>
+    </div>
+    <div class="page page3">
+        <div class="bg">
+        </div>
+        <div class="countdown"></div>
+        <div class="demo bg">
+            <div class="topBg"></div>
+            <div class="bottomBg"></div>
+            <div class="kid_1"></div>
+            <div class="prizes">
+                <div class="red"></div>
+                <div class="pack"></div>
+                <div class="logo"></div>
+            </div>
+            <div class="num">+50</div>
+            <div class="startBg know">
+                朕知道了
+            </div>
+        </div>
+    </div>
+    <div class="page page4">
+        <div class="bg">
+            <div class="logo"></div>
+            <div class="showBtn"></div>
+            <div class="userInfo">
+                <div class="avatar"></div>
+                <div class="name">@</div>
+                <div class="scroe">您的总成绩为0123456789+-*/=分开始倒计时：秒还要继续加油哦~厉害了Word宝大神，请收下我的膝盖</div>
+                <div class="rank">目前排名</div>
+            </div>
+            <div class="continueAndInfo">
+                <div class="infoBtn"></div>
+                <div class="continueBtn"></div>
+            </div>
+            <div class="rankBg">
+                <div class="titles">
+                    <div class="nickname">用户名</div>
+                    <div>成绩</div>
+                    <div>排名</div>
+                </div>
+                <div class="ranks">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page page5">
+        <div class="bg">
+            <div class="logo"></div>
+            <div class="form">
+                <p>
+                    恭喜你目前暂列排行榜,留下以下信息，如果你能一直稳居宝座，我们将会联系你哈！
+                </p>
+                <input type="text" placeholder="姓名" id='name'>
+                <input type="number" placeholder="手机号码" id='mobile'>
+                <input id="demo1" type="text" readonly="" placeholder="选择城市" value="广东省,深圳市,南山区" />
+                <input id="value1" type="hidden" value="20,234,504" />
+                <input type="text" placeholder="详细地址" id='address'>
+                <input type="text" placeholder="宝宝年龄" id='age'>
+                <input type="text" placeholder="纸尿布码数" id='size'>
+                <button type="button" name="button">提交信息</button>
+            </div>
+        </div>
+    </div>
+    <div class="page page6">
+        <div class="bg">
+            <div class="logo"></div>
+            <div class="arrowFight"></div>
+            <div class="kid_2"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    document.body.addEventListener('touchmove', function(e) {
+        if (!document.querySelector('.ranks').contains(e.target)) {
+            e.preventDefault();
+        }
+    });
+</script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="./js/zepto.min.js">
+</script>
+<script type="text/javascript" src="./js/rest.js">
+</script>
+<script type="text/javascript" src="./js/game.js">
+</script>
+<script type="text/javascript" src="./js/ctrl.js">
+</script>
+<link rel="stylesheet" href="./css/LArea.min.css">
+<script src="./js/LAreaData.js"></script>
+<script src="./js/LArea.min.js"></script>
+<script type="text/javascript">
+    var area1 = new LArea();
+    area1.init({
+        'trigger': '#demo1',
+        'valueTo': '#value1',
+        'keys': {
+            id: 'value',
+            name: 'text'
+        },
+        'type': 2,
+        'data': [provs_data, citys_data, dists_data]
+    });
+    area1.value = [1, 13, 3];
+</script>
+</html>

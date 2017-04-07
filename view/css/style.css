@@ -1,0 +1,709 @@
+@font-face {
+  font-family: wdtyj;
+  src: url("../font/wdtyj.woff"), url("../font/wdtyj.ttf"), url("../font/wdtyj.eot"); }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Microsoft YaHei';
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  box-sizing: border-box; }
+
+body,
+html {
+  height: 100%;
+  overflow: hidden; }
+
+.page {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none; }
+  .page.page1 {
+    display: block; }
+
+.bg {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #e71c34;
+  background-image: url("../images/bg.png");
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-size: 9.65333rem 17.73333rem; }
+  .bg .userInfo {
+    position: absolute;
+    left: 50%;
+    top: 2.26667rem;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-direction: column;
+    flex-direction: column; }
+    [data-dpr="1.25"] .bg .userInfo {
+      font-size: 23px; }
+    [data-dpr="1.5"] .bg .userInfo {
+      font-size: 27px; }
+    [data-dpr="2"] .bg .userInfo {
+      font-size: 36px; }
+    [data-dpr="2.5"] .bg .userInfo {
+      font-size: 45px; }
+    [data-dpr="3"] .bg .userInfo {
+      font-size: 54px; }
+    [data-dpr="4"] .bg .userInfo {
+      font-size: 72px; }
+    .bg .userInfo .avatar {
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 0.13333rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
+    .bg .userInfo .rank {
+      font-family: 'wdtyj'; }
+    .bg .userInfo .scroe {
+      font-family: 'wdtyj'; }
+  .bg .continueAndInfo {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: absolute;
+    top: 6.26667rem;
+    left: 0;
+    right: 0; }
+    .bg .continueAndInfo .continueBtn {
+      width: 2.97333rem;
+      height: 1.28rem;
+      background: url("../images/continueBtn.png") no-repeat center;
+      background-size: cover;
+      margin: 0 0.93333rem; }
+    .bg .continueAndInfo .infoBtn {
+      margin: 0 0.93333rem;
+      width: 2.94667rem;
+      height: 1.28rem;
+      background: url("../images/infoBtn.png") no-repeat center;
+      background-size: cover; }
+  .bg .arrowFight {
+    position: absolute;
+    top: 1.30667rem;
+    left: 50%;
+    background: url("../images/fight.png") no-repeat center;
+    background-size: cover;
+    width: 8.96rem;
+    height: 6.56rem;
+    -webkit-transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) scale(1);
+    z-index: 2; }
+  .bg .kid_2 {
+    position: absolute;
+    top: 6.8rem;
+    left: 50%;
+    background: url("../images/kid_2.png") no-repeat center;
+    background-size: cover;
+    width: 9.61333rem;
+    height: 9.6rem;
+    -webkit-transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) scale(1); }
+  .bg .rankBg {
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: url("../images/rank.png") no-repeat center;
+    background-size: cover;
+    width: 9.76rem;
+    height: 7.89333rem;
+    font-size: 18px;
+    color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-align-items: center;
+    align-items: center; }
+    [data-dpr="1.25"] .bg .rankBg {
+      font-size: 23px; }
+    [data-dpr="1.5"] .bg .rankBg {
+      font-size: 27px; }
+    [data-dpr="2"] .bg .rankBg {
+      font-size: 36px; }
+    [data-dpr="2.5"] .bg .rankBg {
+      font-size: 45px; }
+    [data-dpr="3"] .bg .rankBg {
+      font-size: 54px; }
+    [data-dpr="4"] .bg .rankBg {
+      font-size: 72px; }
+    .bg .rankBg .titles {
+      margin-top: 0.86667rem;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      align-items: center;
+      width: 8rem; }
+      .bg .rankBg .titles > div {
+        -webkit-flex: 1;
+        flex: 1;
+        text-align: center; }
+    .bg .rankBg .ranks {
+      font-size: 15px;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: flex-start;
+      align-items: flex-start;
+      width: 8rem;
+      height: 5.66667rem;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+      overflow-x: hidden;
+      overflow-y: visible; }
+      [data-dpr="1.25"] .bg .rankBg .ranks {
+        font-size: 19px; }
+      [data-dpr="1.5"] .bg .rankBg .ranks {
+        font-size: 23px; }
+      [data-dpr="2"] .bg .rankBg .ranks {
+        font-size: 30px; }
+      [data-dpr="2.5"] .bg .rankBg .ranks {
+        font-size: 38px; }
+      [data-dpr="3"] .bg .rankBg .ranks {
+        font-size: 45px; }
+      [data-dpr="4"] .bg .rankBg .ranks {
+        font-size: 60px; }
+      .bg .rankBg .ranks .nickname {
+        max-width: 2.13333rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .bg .rankBg .ranks .rank {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        width: 8rem; }
+        .bg .rankBg .ranks .rank > div {
+          -webkit-flex: 1;
+          flex: 1;
+          text-align: center; }
+  .bg .showBtn {
+    position: absolute;
+    top: 1.06667rem;
+    right: 0.70667rem;
+    background: url("../images/showBtn.png") no-repeat center;
+    background-size: cover;
+    width: 2.50667rem;
+    height: 0.74667rem; }
+  .bg .logo {
+    position: absolute;
+    top: 0.4rem;
+    left: 0.6rem;
+    background: url("../images/logo.png") no-repeat center;
+    background-size: cover;
+    width: 3.05333rem;
+    height: 1.4rem; }
+  .bg .kid {
+    position: absolute;
+    top: 1.32rem;
+    left: 55%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 8.412rem;
+    height: 8.412rem;
+    background: url("../images/kid_0.png") no-repeat center;
+    background-size: cover; }
+  .bg .csdjcs {
+    position: absolute;
+    top: 7.8rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 6.888rem;
+    height: 3.696rem;
+    background: url("../images/csdjcs.png") no-repeat center;
+    background-size: cover; }
+  .bg .gameName {
+    position: absolute;
+    top: 11.64rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 4.944rem;
+    height: 0.936rem;
+    background: url("../images/gameName.png") no-repeat center;
+    background-size: cover; }
+  .bg .ruleTitle {
+    position: absolute;
+    top: 1.73333rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 12.89333rem;
+    background: url("../images/ruleTitle.png") no-repeat center;
+    background-size: 10rem 12.89333rem; }
+  .bg .ruleDes {
+    position: absolute;
+    top: 4.2rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 7.42667rem;
+    height: 8.86667rem;
+    background: url("../images/ruleDes.png") no-repeat center;
+    background-size: 7.42667rem 8.86667rem; }
+  .bg .btns {
+    position: absolute;
+    top: 13.2rem;
+    width: 100%;
+    left: 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    .bg .btns > div {
+      margin: 0 0.4rem; }
+    .bg .btns .ruleBtn {
+      background: url("../images/gameRule.png") no-repeat center;
+      background-size: cover;
+      width: 3.12rem;
+      height: 1.52rem; }
+    .bg .btns .start {
+      background: url("../images/start.png") no-repeat center;
+      background-size: cover;
+      width: 3.24rem;
+      height: 1.62667rem; }
+
+.countdown {
+  position: absolute;
+  top: 0.13333rem;
+  font-size: 18px;
+  right: 0.13333rem;
+  color: #fff;
+  font-family: 'wdtyj'; }
+  [data-dpr="1.25"] .countdown {
+    font-size: 23px; }
+  [data-dpr="1.5"] .countdown {
+    font-size: 27px; }
+  [data-dpr="2"] .countdown {
+    font-size: 36px; }
+  [data-dpr="2.5"] .countdown {
+    font-size: 45px; }
+  [data-dpr="3"] .countdown {
+    font-size: 54px; }
+  [data-dpr="4"] .countdown {
+    font-size: 72px; }
+
+.startBg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  color: #fff;
+  font-size: 50px;
+  pointer-events: none;
+  font-family: 'wdtyj'; }
+  [data-dpr="1.25"] .startBg {
+    font-size: 63px; }
+  [data-dpr="1.5"] .startBg {
+    font-size: 75px; }
+  [data-dpr="2"] .startBg {
+    font-size: 100px; }
+  [data-dpr="2.5"] .startBg {
+    font-size: 125px; }
+  [data-dpr="3"] .startBg {
+    font-size: 150px; }
+  [data-dpr="4"] .startBg {
+    font-size: 200px; }
+  .startBg .logo {
+    position: absolute;
+    top: 0.66667rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-family: 'wdtyj'; }
+  .startBg .item {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 0.26667rem;
+    font-family: 'wdtyj'; }
+    [data-dpr="1.25"] .startBg .item {
+      font-size: 30px; }
+    [data-dpr="1.5"] .startBg .item {
+      font-size: 36px; }
+    [data-dpr="2"] .startBg .item {
+      font-size: 48px; }
+    [data-dpr="2.5"] .startBg .item {
+      font-size: 60px; }
+    [data-dpr="3"] .startBg .item {
+      font-size: 72px; }
+    [data-dpr="4"] .startBg .item {
+      font-size: 96px; }
+    .startBg .item > span {
+      font-family: 'wdtyj'; }
+
+.num {
+  position: absolute;
+  pointer-events: none;
+  -webkit-animation: fadeInUpBig 1s 0.2s ease both;
+  -moz-animation: fadeInUpBig 1s 0.2s ease both;
+  color: #fff;
+  font-size: 24px;
+  font-family: 'wdtyj'; }
+  [data-dpr="1.25"] .num {
+    font-size: 30px; }
+  [data-dpr="1.5"] .num {
+    font-size: 36px; }
+  [data-dpr="2"] .num {
+    font-size: 48px; }
+  [data-dpr="2.5"] .num {
+    font-size: 60px; }
+  [data-dpr="3"] .num {
+    font-size: 72px; }
+  [data-dpr="4"] .num {
+    font-size: 96px; }
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0) translateY(0);
+    transform: scale(0) translateY(0); }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1) translateY(-rem(200));
+    transform: scale(1) translateY(-rem(200)); } }
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0) translateY(0);
+    transform: scale(0) translateY(0); }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1) translateY(-rem(200));
+    transform: scale(1) translateY(-rem(200)); } }
+
+@-webkit-keyframes show {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes show {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes dram {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%); }
+  100% {
+    -webkit-transform: translateY(80%);
+    transform: translateY(80%); } }
+
+@keyframes dram {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%); }
+  100% {
+    -webkit-transform: translateY(80%);
+    transform: translateY(80%); } }
+
+@-webkit-keyframes leftRight {
+  0% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  25% {
+    -webkit-transform: translateX(80%);
+    transform: translateX(80%); }
+  50% {
+    -webkit-transform: translateX(-180%);
+    transform: translateX(-180%); }
+  75% {
+    -webkit-transform: translateX(80%);
+    transform: translateX(80%); }
+  100% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); } }
+
+@keyframes leftRight {
+  0% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  25% {
+    -webkit-transform: translateX(80%);
+    transform: translateX(80%); }
+  50% {
+    -webkit-transform: translateX(-180%);
+    transform: translateX(-180%); }
+  75% {
+    -webkit-transform: translateX(80%);
+    transform: translateX(80%); }
+  100% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); } }
+
+.demo {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2; }
+  .demo .prizes {
+    position: absolute;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    width: 10rem;
+    height: 100%;
+    -webkit-animation: dram 4s ease-in;
+    animation: dram 4s ease-in; }
+    .demo .prizes .red {
+      background: url("../images/prize_2.png") no-repeat center;
+      background-size: cover;
+      width: 1.78667rem;
+      height: 1.64rem;
+      left: 0.93333rem;
+      top: 2.66667rem;
+      position: absolute; }
+    .demo .prizes .logo {
+      background: url("../images/prize_0.png") no-repeat center;
+      background-size: cover;
+      width: 2.72rem;
+      height: 1.29333rem;
+      left: 3.06667rem;
+      top: 5.33333rem;
+      position: absolute; }
+    .demo .prizes .pack {
+      background: url("../images/prize_1.png") no-repeat center;
+      background-size: cover;
+      width: 1.56rem;
+      height: 1.53333rem;
+      left: 6.4rem;
+      top: 0.8rem;
+      position: absolute; }
+  .demo .num {
+    position: absolute;
+    pointer-events: none;
+    -webkit-animation: fadeInUpBig 1s 4s ease both;
+    -moz-animation: fadeInUpBig 1s 4s ease both;
+    bottom: 4.08rem;
+    right: 2.73333rem;
+    color: #fff;
+    font-size: 24px;
+    font-family: 'wdtyj'; }
+    [data-dpr="1.25"] .demo .num {
+      font-size: 30px; }
+    [data-dpr="1.5"] .demo .num {
+      font-size: 36px; }
+    [data-dpr="2"] .demo .num {
+      font-size: 48px; }
+    [data-dpr="2.5"] .demo .num {
+      font-size: 60px; }
+    [data-dpr="3"] .demo .num {
+      font-size: 72px; }
+    [data-dpr="4"] .demo .num {
+      font-size: 96px; }
+  .demo .startBg.know {
+    opacity: 0;
+    -webkit-animation: show 0.5s 5s ease-in forwards;
+    animation: show 0.5s 5s ease-in forwards;
+    pointer-events: visible; }
+  .demo .topBg {
+    background: url("../images/bg_top.png") no-repeat center;
+    background-size: cover;
+    width: 4.17333rem;
+    height: 5.58667rem;
+    top: 0;
+    left: 0;
+    position: absolute; }
+  .demo .bottomBg {
+    background: url("../images/bg_bottom.png") no-repeat center;
+    background-size: cover;
+    width: 10rem;
+    height: 5.93333rem;
+    bottom: 0;
+    position: absolute;
+    left: 0; }
+  .demo .kid_1 {
+    background: url("../images/kid_1.png") no-repeat center;
+    background-size: cover;
+    -webkit-animation: leftRight 4.5s 0.2s ease-in;
+    animation: leftRight 4.5s 0.2s ease-in;
+    width: 2.73333rem;
+    height: 4.08rem;
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+
+.form {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+  .form p {
+    color: #fff;
+    font-size: 18px;
+    text-indent: 2em;
+    padding: 0.33333rem 0.4rem; }
+    [data-dpr="1.25"] .form p {
+      font-size: 23px; }
+    [data-dpr="1.5"] .form p {
+      font-size: 27px; }
+    [data-dpr="2"] .form p {
+      font-size: 36px; }
+    [data-dpr="2.5"] .form p {
+      font-size: 45px; }
+    [data-dpr="3"] .form p {
+      font-size: 54px; }
+    [data-dpr="4"] .form p {
+      font-size: 72px; }
+  .form input {
+    border: 0;
+    width: 8.66667rem;
+    margin: 0.13333rem;
+    padding: 0.26667rem 0.4rem;
+    border-radius: 0.4rem;
+    box-shadow: 0.04rem 0.04rem 0.04rem rgba(0, 0, 0, 0.6);
+    font-size: 18px; }
+    [data-dpr="1.25"] .form input {
+      font-size: 23px; }
+    [data-dpr="1.5"] .form input {
+      font-size: 27px; }
+    [data-dpr="2"] .form input {
+      font-size: 36px; }
+    [data-dpr="2.5"] .form input {
+      font-size: 45px; }
+    [data-dpr="3"] .form input {
+      font-size: 54px; }
+    [data-dpr="4"] .form input {
+      font-size: 72px; }
+  .form button {
+    border: 0;
+    width: 8.66667rem;
+    margin: 0.13333rem;
+    padding: 0.26667rem 0.4rem;
+    border-radius: 0.4rem;
+    font-size: 18px;
+    background: #fff;
+    box-shadow: 0.06667rem 0.06667rem 0.06667rem rgba(0, 0, 0, 0.6); }
+    [data-dpr="1.25"] .form button {
+      font-size: 23px; }
+    [data-dpr="1.5"] .form button {
+      font-size: 27px; }
+    [data-dpr="2"] .form button {
+      font-size: 36px; }
+    [data-dpr="2.5"] .form button {
+      font-size: 45px; }
+    [data-dpr="3"] .form button {
+      font-size: 54px; }
+    [data-dpr="4"] .form button {
+      font-size: 72px; }
+
+.page2 .start {
+  position: relative;
+  top: 0.86667rem !important; }
+
+.gearArea {
+  font-size: 12px; }
+  [data-dpr="1.25"] .gearArea {
+    font-size: 15px; }
+  [data-dpr="1.5"] .gearArea {
+    font-size: 18px; }
+  [data-dpr="2"] .gearArea {
+    font-size: 24px; }
+  [data-dpr="2.5"] .gearArea {
+    font-size: 30px; }
+  [data-dpr="3"] .gearArea {
+    font-size: 36px; }
+  [data-dpr="4"] .gearArea {
+    font-size: 48px; }
+
+.alert {
+  width: 4.66667rem;
+  height: 1.33333rem;
+  border-radius: 0.13333rem;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6); }
+  [data-dpr="1.25"] .alert {
+    font-size: 23px; }
+  [data-dpr="1.5"] .alert {
+    font-size: 27px; }
+  [data-dpr="2"] .alert {
+    font-size: 36px; }
+  [data-dpr="2.5"] .alert {
+    font-size: 45px; }
+  [data-dpr="3"] .alert {
+    font-size: 54px; }
+  [data-dpr="4"] .alert {
+    font-size: 72px; }
